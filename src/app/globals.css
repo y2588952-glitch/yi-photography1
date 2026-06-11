@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* ==================== Tailwind v4 自定义主题 ==================== */
+@theme {
+  --color-gold: #c9a96e;
+  --color-gold-light: #d4b87a;
+  --color-gold-dark: #b8944f;
+  --color-surface: #0a0a0a;
+  --color-surface-secondary: #111111;
+  --color-surface-card: #1a1a1a;
+  --color-surface-hover: #222222;
+  --color-surface-input: #1e1e1e;
+  --color-text-primary: #e8e8e8;
+  --color-text-secondary: #a0a0a0;
+  --color-text-muted: #666666;
+  --color-border-default: #2a2a2a;
+  --color-border-light: #333333;
+
+}
+
+/* ==================== 全局基础样式 ==================== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* 选中 */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-surface);
+}
+
+/* ==================== 自定义动画 ==================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%      { transform: translateY(8px); opacity: 0.3; }
+}
+
+/* ==================== Hero Swiper — Ken Burns 缩放过渡 ==================== */
+/* 非活跃幻灯片略微放大，激活后 6s 内平滑缩回原始比例 */
+.hero-slide-bg {
+  transform: scale(1.05);
+  transition: transform 6s ease-out;
+}
+
+.swiper-slide-active .hero-slide-bg {
+  transform: scale(1);
+}
+
+/* 进度条 — 宽度平滑过渡，匹配 autoplay 计时节奏 */
+.hero-progress-bar {
+  transition: width 0.3s linear;
+}
+
+/* 分页点 hover 过渡已在 Hero.tsx 中通过 Tailwind 处理 */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 6px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@utility animate-fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@utility animate-fade-up-delay-1 { animation-delay: 0.2s; }
+@utility animate-fade-up-delay-2 { animation-delay: 0.5s; }
+@utility animate-fade-up-delay-3 { animation-delay: 0.7s; }
+@utility animate-fade-up-delay-4 { animation-delay: 0.9s; }
+
+@utility animate-scroll-bounce {
+  animation: scrollBounce 2s infinite;
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 0.25s ease forwards;
+}
+
+/* 微信扫码 — 扫描线上下往复 */
+@keyframes scan {
+  0%   { top: 12px; }
+  50%  { top: calc(100% - 16px); }
+  100% { top: 12px; }
+}
+
+@utility animate-scan {
+  animation: scan 2.2s ease-in-out infinite;
+}

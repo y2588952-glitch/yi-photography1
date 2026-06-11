@@ -1,0 +1,616 @@
+                 <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="亦·PHOTOGRAPHY — 风光旅行摄影师，用镜头记录世界的温度">
+    <title>亦·PHOTOGRAPHY | 风光旅行摄影师</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== 导航栏 ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-text">亦</span>
+                <span class="logo-sub">PHOTOGRAPHY</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">首页</a></li>
+                <li><a href="#gallery" class="nav-link">作品</a></li>
+                <li><a href="#about" class="nav-link">关于</a></li>
+                <li><a href="#services" class="nav-link">服务</a></li>
+                <li><a href="#testimonials" class="nav-link">评价</a></li>
+                <li><a href="#contact" class="nav-link">联系</a></li>
+            </ul>
+            <div class="nav-socials">
+                <a href="#" class="social-icon" aria-label="Instagram" data-action="coming-soon" data-tip="Instagram 即将上线"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon" aria-label="小红书" data-action="coming-soon" data-tip="小红书 即将上线"><i class="fas fa-book"></i></a>
+                <a href="#" class="social-icon" aria-label="微信" data-action="copy" data-copy="X316771979" data-tip="微信号已复制"><i class="fab fa-weixin"></i></a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== Hero 英雄区 ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-slides">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=80');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=1920&q=80');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <!-- 导航箭头 -->
+        <button class="hero-arrow hero-arrow-left" id="heroPrev" aria-label="上一张">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="hero-arrow hero-arrow-right" id="heroNext" aria-label="下一张">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="hero-content">
+            <p class="hero-greeting fade-up">— 风光旅行摄影师 —</p>
+            <h1 class="hero-title fade-up">亦·PHOTOGRAPHY</h1>
+            <p class="hero-subtitle fade-up">穿越山海，捕捉光影。每一帧都是与自然的对话。</p>
+            <div class="hero-btns fade-up">
+                <a href="#gallery" class="btn btn-gold">查看作品</a>
+                <a href="#contact" class="btn btn-outline">立即预约</a>
+            </div>
+        </div>
+
+        <!-- 底部控制栏 -->
+        <div class="hero-bottom-bar">
+            <!-- 进度条 -->
+            <div class="hero-progress-track">
+                <div class="hero-progress-fill" id="heroProgressFill"></div>
+            </div>
+            <!-- 计数器 + 分页点 -->
+            <div class="hero-controls-row">
+                <span class="hero-counter" id="heroCounterCurr">01</span>
+                <div class="hero-dots" id="heroDots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                    <span class="dot" data-index="4"></span>
+                </div>
+                <span class="hero-counter" id="heroCounterTotal">05</span>
+            </div>
+        </div>
+
+        <!-- 滚动指示器 -->
+        <a href="#gallery" class="scroll-indicator" aria-label="向下滚动">
+            <span class="scroll-line"></span>
+        </a>
+    </section>
+
+    <!-- ==================== 作品画廊 ==================== -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">PORTFOLIO</span>
+                <h2 class="section-title">作品精选</h2>
+                <p class="section-desc">每一次快门，都是与光影的邂逅。</p>
+            </div>
+
+            <!-- 分类筛选 -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="nature">自然风光</button>
+                <button class="filter-btn" data-filter="city">城市建筑</button>
+                <button class="filter-btn" data-filter="humanity">人文纪实</button>
+                <button class="filter-btn" data-filter="travel">旅行随笔</button>
+            </div>
+
+            <!-- 画廊网格 -->
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- 自然风光 -->
+                <div class="gallery-item" data-category="nature">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80" alt="远山与湖泊" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>远山与湖泊</h3>
+                        <p>自然风光</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="nature">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" alt="森林光影" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>森林光影</h3>
+                        <p>自然风光</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="nature">
+                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600&q=80" alt="秋色山谷" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>秋色山谷</h3>
+                        <p>自然风光</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="nature">
+                    <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80" alt="瀑布奔流" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>瀑布奔流</h3>
+                        <p>自然风光</p>
+                    </div>
+                </div>
+
+                <!-- 城市建筑 -->
+                <div class="gallery-item" data-category="city">
+                    <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=600&q=80" alt="城市天际线" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>城市天际线</h3>
+                        <p>城市建筑</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="city">
+                    <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=600&q=80" alt="都市夜景" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>都市夜景</h3>
+                        <p>城市建筑</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="city">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80" alt="现代建筑" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>现代建筑</h3>
+                        <p>城市建筑</p>
+                    </div>
+                </div>
+
+                <!-- 人文纪实 -->
+                <div class="gallery-item" data-category="humanity">
+                    <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=600&q=80" alt="街角日常" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>街角日常</h3>
+                        <p>人文纪实</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="humanity">
+                    <img src="https://images.unsplash.com/photo-1544006659-f0b21826ce1d?w=600&q=80" alt="市集烟火" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>市集烟火</h3>
+                        <p>人文纪实</p>
+                    </div>
+                </div>
+
+                <!-- 旅行随笔 -->
+                <div class="gallery-item" data-category="travel">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="旅途风景" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>旅途风景</h3>
+                        <p>旅行随笔</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="travel">
+                    <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=600&q=80" alt="海岸线" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>海岸线</h3>
+                        <p>旅行随笔</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="travel">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80" alt="公路旅行" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <h3>公路旅行</h3>
+                        <p>旅行随笔</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 灯箱 Lightbox ==================== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="关闭">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="上一张"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="下一张"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+            <div class="lightbox-caption">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxCategory"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== 关于我 ==================== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <!-- 左侧：照片 -->
+                <div class="about-image-wrapper reveal-left">
+                    <div class="about-image-frame">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=500&q=80" alt="摄影师 亦" loading="lazy">
+                    </div>
+                    <div class="about-socials">
+                        <a href="#" class="about-social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="about-social-link"><i class="fas fa-book"></i></a>
+                        <a href="#" class="about-social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="about-social-link"><i class="fab fa-weibo"></i></a>
+                    </div>
+                </div>
+
+                <!-- 右侧：文字 -->
+                <div class="about-text reveal-right">
+                    <span class="section-tag">ABOUT ME</span>
+                    <h2 class="section-title">我是亦</h2>
+                    <p class="about-intro">
+                        一名自由风光摄影师，行走了 <strong>20+</strong> 个国家，穿越山川湖海，
+                        用镜头捕捉大自然最真实、最动人的瞬间。
+                    </p>
+                    <p class="about-desc">
+                        从青藏高原的雪山到冰岛的极光，从江南水乡的晨雾到撒哈拉的星空——
+                        每一次按下快门，都是与这个世界的一次深情对话。
+                        我相信，好的照片不仅仅是画面的记录，更是情感与故事的传递。
+                    </p>
+                    <p class="about-desc">
+                        常年旅居在路上，接受各地旅拍、商业风光及摄影教学合作。
+                        愿与每一个热爱光影的你，共同记录这个世界的温度。
+                    </p>
+                    <blockquote class="about-quote">
+                        "摄影对我来说，不是工作，而是一种生活方式。"
+                    </blockquote>
+                </div>
+            </div>
+
+            <!-- 数据统计 -->
+            <div class="about-stats reveal-up">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="12">0</span>
+                    <span class="stat-label">年拍摄经验</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="28">0</span>
+                    <span class="stat-label">到访国家</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="3600">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">作品数量</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-label">获奖荣誉</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 服务与报价 ==================== -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">SERVICES</span>
+                <h2 class="section-title">服务与报价</h2>
+                <p class="section-desc">为每一位客户量身定制专属拍摄方案</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- 个人旅拍 -->
+                <div class="service-card reveal-up">
+                    <div class="service-icon">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <h3 class="service-name">个人旅拍</h3>
+                    <p class="service-desc">一对一专属旅拍服务，跟随你的脚步记录旅途中最美的你。包含精选精修照片。</p>
+                    <div class="service-price">
+                        <span class="price-amount">¥3,000</span>
+                        <span class="price-unit">/ 组起</span>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 2小时拍摄</li>
+                        <li><i class="fas fa-check"></i> 30张精修</li>
+                        <li><i class="fas fa-check"></i> 1个场景</li>
+                        <li><i class="fas fa-check"></i> 底片全送</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-gold btn-sm">立即预约</a>
+                </div>
+
+                <!-- 商业风光 -->
+                <div class="service-card featured reveal-up">
+                    <div class="service-badge">热门</div>
+                    <div class="service-icon">
+                        <i class="fas fa-mountain-sun"></i>
+                    </div>
+                    <h3 class="service-name">商业风光</h3>
+                    <p class="service-desc">为品牌、酒店、旅游局等提供高品质风光摄影服务，可用于商业广告及宣传。</p>
+                    <div class="service-price">
+                        <span class="price-amount">¥8,000</span>
+                        <span class="price-unit">/ 项目起</span>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 全天候拍摄</li>
+                        <li><i class="fas fa-check"></i> 50张精修</li>
+                        <li><i class="fas fa-check"></i> 商业授权</li>
+                        <li><i class="fas fa-check"></i> 航拍服务</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-gold btn-sm">立即预约</a>
+                </div>
+
+                <!-- 城市建筑 -->
+                <div class="service-card reveal-up">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="service-name">城市建筑</h3>
+                    <p class="service-desc">建筑空间摄影，为设计师、地产商提供专业的建筑内外景拍摄。</p>
+                    <div class="service-price">
+                        <span class="price-amount">¥5,000</span>
+                        <span class="price-unit">/ 项目起</span>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 4小时拍摄</li>
+                        <li><i class="fas fa-check"></i> 40张精修</li>
+                        <li><i class="fas fa-check"></i> 多角度覆盖</li>
+                        <li><i class="fas fa-check"></i> 3-5个工作日内交付</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-gold btn-sm">立即预约</a>
+                </div>
+
+                <!-- 后期修图 -->
+                <div class="service-card reveal-up">
+                    <div class="service-icon">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="service-name">后期修图</h3>
+                    <p class="service-desc">专业后期调色与精修，让你的照片焕发电影质感。提供多种风格预设。</p>
+                    <div class="service-price">
+                        <span class="price-amount">¥500</span>
+                        <span class="price-unit">/ 张起</span>
+                    </div>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 专业调色</li>
+                        <li><i class="fas fa-check"></i> 人像精修</li>
+                        <li><i class="fas fa-check"></i> 多种风格</li>
+                        <li><i class="fas fa-check"></i> 24小时内交付</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-gold btn-sm">立即预约</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 客户评价 ==================== -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">TESTIMONIALS</span>
+                <h2 class="section-title">客户心声</h2>
+                <p class="section-desc">来自每一位信任我的客户的真实评价</p>
+            </div>
+
+            <div class="testimonials-slider" id="testimonialSlider">
+                <div class="testimonials-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"亦是一位真正懂光的摄影师。他帮我拍的旅拍照片每一张都像电影海报，朋友都问我在哪里找的摄影师。强烈推荐！"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="小雅" loading="lazy">
+                            <div>
+                                <h4>小雅</h4>
+                                <span>旅行博主</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"合作过很多摄影师，亦的专业度和审美是最让我放心的。商业风光项目交付速度很快，成片质量远超预期。"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80" alt="Mark Chen" loading="lazy">
+                            <div>
+                                <h4>Mark Chen</h4>
+                                <span>酒店品牌总监</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"三天的川西旅拍之旅，亦不仅帮我们记录了最美的风景，还教了我们很多摄影技巧。像朋友一样的摄影师！"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="思涵" loading="lazy">
+                            <div>
+                                <h4>思涵</h4>
+                                <span>自由职业者</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"请亦来拍摄我们的度假村宣传照，他对光线的把握太绝了。晨曦和黄昏的照片美得让人窒息，客人看了都问是不是实景。"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="James Liu" loading="lazy">
+                            <div>
+                                <h4>James Liu</h4>
+                                <span>度假村创始人</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-controls">
+                <button class="testimonial-dot active" data-index="0"></button>
+                <button class="testimonial-dot" data-index="1"></button>
+                <button class="testimonial-dot" data-index="2"></button>
+                <button class="testimonial-dot" data-index="3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 联系/预约 ==================== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CONTACT</span>
+                <h2 class="section-title">联系我</h2>
+                <p class="section-desc">期待与你一起创造独一无二的光影记忆</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- 表单 -->
+                <div class="contact-form-wrapper reveal-left">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">姓名 *</label>
+                                <input type="text" id="name" name="name" placeholder="你的名字" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">邮箱 *</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceType">拍摄类型</label>
+                            <select id="serviceType" name="serviceType">
+                                <option value="">请选择拍摄类型</option>
+                                <option value="travel">个人旅拍</option>
+                                <option value="commercial">商业风光</option>
+                                <option value="architecture">城市建筑</option>
+                                <option value="retouch">后期修图</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言 *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="请描述你的拍摄需求、时间、地点等信息..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold btn-block">
+                            <span class="btn-text">发送预约</span>
+                            <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> 发送中...</span>
+                        </button>
+                    </form>
+                    <div class="form-success" id="formSuccess" style="display:none;">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>预约提交成功！</h3>
+                        <p>感谢你的信任，我将在 <strong>24小时内</strong> 回复你。</p>
+                    </div>
+                </div>
+
+                <!-- 联系信息 -->
+                <div class="contact-info-wrapper reveal-right">
+                    <div class="contact-info-card">
+                        <h3>联系方式</h3>
+                        <p class="contact-info-desc">有任何问题或合作意向，欢迎随时联系。也期待在社交媒体上与你互动。</p>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <span>邮箱</span>
+                                <p>316771979@qq.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="fab fa-weixin"></i></div>
+                            <div>
+                                <span>微信</span>
+                                <p>X316771979</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <span>所在地</span>
+                                <p>中国 · 成都（可全球旅拍）</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-socials">
+                            <span>关注我：</span>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fas fa-book"></i></a>
+                            <a href="#"><i class="fab fa-weixin"></i></a>
+                            <a href="#"><i class="fab fa-weibo"></i></a>
+                            <a href="#"><i class="fab fa-bilibili"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 页脚 ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">
+                        <span class="logo-text">亦</span>
+                        <span class="logo-sub">PHOTOGRAPHY</span>
+                    </a>
+                    <p>穿越山海，捕捉光影。<br>每一帧都是与自然的对话。</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#gallery">作品</a></li>
+                        <li><a href="#about">关于</a></li>
+                        <li><a href="#services">服务</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#services">个人旅拍</a></li>
+                        <li><a href="#services">商业风光</a></li>
+                        <li><a href="#services">城市建筑</a></li>
+                        <li><a href="#services">后期修图</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>订阅更新</h4>
+                    <p>获取最新作品与旅拍故事</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="你的邮箱地址" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 亦·PHOTOGRAPHY. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> for photography lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== 回到顶部 ==================== -->
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
