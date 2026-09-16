@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Transition } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { GalleryItem } from '@/lib/types';
 
@@ -21,7 +21,7 @@ const slideVariants = {
   exit: (dir: number) => ({ x: dir > 0 ? -120 : 120, opacity: 0 }),
 };
 
-const slideTransition = {
+const slideTransition: Transition = {
   x: { type: 'spring', stiffness: 300, damping: 30 },
   opacity: { duration: 0.2 },
 };
